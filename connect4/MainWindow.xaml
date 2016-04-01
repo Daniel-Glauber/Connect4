@@ -1,0 +1,67 @@
+﻿<Window x:Class="connect4.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:connect4"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="997.656" Width="1042.969">
+
+
+    <Canvas Margin="291,280,0,0" HorizontalAlignment="Left" Width="424" RenderTransformOrigin="0.5,0.5" Height="358" VerticalAlignment="Top">
+
+        <Rectangle Fill="#FFFDE707" HorizontalAlignment="Left" Height="370" Margin="0,0,0,0" Stroke="Black" VerticalAlignment="Top" Width="430"/>
+        <Ellipse x:Name="C1R1" Fill="#FFF5F4F4" HorizontalAlignment="Left" Height="50" Stroke="Black" VerticalAlignment="Top" Width="50" Canvas.Left="10" Canvas.Top="310"/>
+        <Ellipse x:Name="C2R1" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="50" Stroke="Black" VerticalAlignment="Top" Width="50" Canvas.Left="70" Canvas.Top="310"/>
+        <Ellipse x:Name="C3R1" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="50" Stroke="Black" VerticalAlignment="Top" Width="50" Canvas.Left="130" Canvas.Top="310"/>
+        <Ellipse x:Name="C4R1" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="50" Stroke="Black" VerticalAlignment="Top" Width="50" Canvas.Left="190" Canvas.Top="310"/>
+        <Ellipse x:Name="C5R1" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="50" Stroke="Black" VerticalAlignment="Top" Width="50" Canvas.Left="250" Canvas.Top="310"/>
+        <Ellipse x:Name="C6R1" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="50" Stroke="Black" VerticalAlignment="Top" Width="50" Canvas.Left="310" Canvas.Top="310"/>
+        <Ellipse x:Name="C7R1" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="50" Stroke="Black" VerticalAlignment="Top" Width="50" Canvas.Left="370" Canvas.Top="310"/>
+        <Ellipse x:Name="C1R2" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="50" Stroke="Black" VerticalAlignment="Top" Width="50" Canvas.Left="10" Canvas.Top="250"/>
+        <Ellipse x:Name="C2R2" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="50" Stroke="Black" VerticalAlignment="Top" Width="50" Canvas.Left="70" Canvas.Top="250"/>
+        <Ellipse x:Name="C3R2" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="50" Stroke="Black" VerticalAlignment="Top" Width="50" Canvas.Left="130" Canvas.Top="250"/>
+        <Ellipse x:Name="C4R2" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="50" Stroke="Black" VerticalAlignment="Top" Width="50" Canvas.Left="190" Canvas.Top="250"/>
+        <Ellipse x:Name="C5R2" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="50" Stroke="Black" VerticalAlignment="Top" Width="50" Canvas.Left="250" Canvas.Top="250"/>
+        <Ellipse x:Name="C6R2" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="50" Stroke="Black" VerticalAlignment="Top" Width="50" Canvas.Left="310" Canvas.Top="250"/>
+        <Ellipse x:Name="C7R2" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="50" Stroke="Black" VerticalAlignment="Top" Width="50" Canvas.Left="370" Canvas.Top="250"/>
+        <Ellipse x:Name="C1R3" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="50" Stroke="Black" VerticalAlignment="Top" Width="50" Canvas.Left="10" Canvas.Top="190"/>
+        <Ellipse x:Name="C2R3" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="50" Stroke="Black" VerticalAlignment="Top" Width="50" Canvas.Left="70" Canvas.Top="190"/>
+        <Ellipse x:Name="C3R3" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="50" Stroke="Black" VerticalAlignment="Top" Width="50" Canvas.Left="130" Canvas.Top="190"/>
+        <Ellipse x:Name="C4R3" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="50" Stroke="Black" VerticalAlignment="Top" Width="50" Canvas.Left="190" Canvas.Top="190"/>
+        <Ellipse x:Name="C5R3" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="50" Stroke="Black" VerticalAlignment="Top" Width="50" Canvas.Left="250" Canvas.Top="190"/>
+        <Ellipse x:Name="C6R3" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="50" Stroke="Black" VerticalAlignment="Top" Width="50" Canvas.Left="310" Canvas.Top="190"/>
+        <Ellipse x:Name="C7R3" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="50" Stroke="Black" VerticalAlignment="Top" Width="50" Canvas.Left="370" Canvas.Top="190"/>
+        <Ellipse x:Name="C1R4" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="50" Stroke="Black" VerticalAlignment="Top" Width="50" Canvas.Left="10" Canvas.Top="130"/>
+        <Ellipse x:Name="C2R4" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="50" Stroke="Black" VerticalAlignment="Top" Width="50" Canvas.Left="70" Canvas.Top="130"/>
+        <Ellipse x:Name="C3R4" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="50" Stroke="Black" VerticalAlignment="Top" Width="50" Canvas.Left="130" Canvas.Top="130"/>
+        <Ellipse x:Name="C4R4" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="50" Stroke="Black" VerticalAlignment="Top" Width="50" Canvas.Left="190" Canvas.Top="130"/>
+        <Ellipse x:Name="C5R4" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="50" Stroke="Black" VerticalAlignment="Top" Width="50" Canvas.Left="250" Canvas.Top="130"/>
+        <Ellipse x:Name="C6R4" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="50" Stroke="Black" VerticalAlignment="Top" Width="50" Canvas.Left="310" Canvas.Top="130"/>
+        <Ellipse x:Name="C7R4" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="50" Stroke="Black" VerticalAlignment="Top" Width="50" Canvas.Left="370" Canvas.Top="130"/>
+        <Ellipse x:Name="C1R5" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="50" Stroke="Black" VerticalAlignment="Top" Width="50" Canvas.Left="10" Canvas.Top="70"/>
+        <Ellipse x:Name="C2R5" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="50" Stroke="Black" VerticalAlignment="Top" Width="50" Canvas.Left="70" Canvas.Top="70"/>
+        <Ellipse x:Name="C3R5" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="50" Stroke="Black" VerticalAlignment="Top" Width="50" Canvas.Left="130" Canvas.Top="70"/>
+        <Ellipse x:Name="C4R5" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="50" Stroke="Black" VerticalAlignment="Top" Width="50" Canvas.Left="190" Canvas.Top="70"/>
+        <Ellipse x:Name="C5R5" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="50" Stroke="Black" VerticalAlignment="Top" Width="50" Canvas.Left="250" Canvas.Top="70"/>
+        <Ellipse x:Name="C6R5" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="50" Stroke="Black" VerticalAlignment="Top" Width="50" Canvas.Left="310" Canvas.Top="70"/>
+        <Ellipse x:Name="C7R5" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="50" Stroke="Black" VerticalAlignment="Top" Width="50" Canvas.Left="370" Canvas.Top="70"/>
+        <Ellipse x:Name="C1R6" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="50" Stroke="Black" VerticalAlignment="Top" Width="50" Canvas.Left="10" Canvas.Top="10"/>
+        <Ellipse x:Name="C2R6" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="50" Stroke="Black" VerticalAlignment="Top" Width="50" Canvas.Left="70" Canvas.Top="10"/>
+        <Ellipse x:Name="C3R6" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="50" Stroke="Black" VerticalAlignment="Top" Width="50" Canvas.Left="130" Canvas.Top="10"/>
+        <Ellipse x:Name="C4R6" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="50" Stroke="Black" VerticalAlignment="Top" Width="50" Canvas.Left="190" Canvas.Top="10"/>
+        <Ellipse x:Name="C5R6" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="50" Stroke="Black" VerticalAlignment="Top" Width="50" Canvas.Left="250" Canvas.Top="10"/>
+        <Ellipse x:Name="C6R6" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="50" Stroke="Black" VerticalAlignment="Top" Width="50" Canvas.Left="310" Canvas.Top="10"/>
+        <Ellipse x:Name="C7R6" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="50" Stroke="Black" VerticalAlignment="Top" Width="50" Canvas.Left="370" Canvas.Top="10"/>
+        <Button x:Name="C1" Width="56" Height="350" Canvas.Top="5" Canvas.Left="7" ClickMode="Press" Click="C1_Click" Background="{x:Null}" Foreground="#FFFDE707" BorderBrush="#FFFDE707" Opacity="0"/>
+        <Button x:Name="C2" Width="56" Height="350" Canvas.Top="5" Canvas.Left="67" ClickMode="Press" Click="C2_Click" Background="{x:Null}" Foreground="#FFFDE707" BorderBrush="#FFFDE707" Opacity="0"/>
+        <Button x:Name="C3" Width="56" Height="350" Canvas.Top="5" Canvas.Left="127" ClickMode="Press" Click="C3_Click" Background="{x:Null}" Foreground="#FFFDE707" BorderBrush="#FFFDE707" Opacity="0"/>
+        <Button x:Name="C4" Width="56" Height="350" Canvas.Top="5" Canvas.Left="187" ClickMode="Press" Click="C4_Click" Background="{x:Null}" Foreground="#FFFDE707" BorderBrush="#FFFDE707" Opacity="0"/>
+        <Button x:Name="C5" Width="56" Height="350" Canvas.Top="5" Canvas.Left="247" ClickMode="Press" Click="C5_Click" Background="{x:Null}" Foreground="#FFFDE707" BorderBrush="#FFFDE707" Opacity="0"/>
+        <Button x:Name="C6" Width="56" Height="350" Canvas.Top="5" Canvas.Left="307" ClickMode="Press" Click="C6_Click" Background="{x:Null}" Foreground="#FFFDE707" BorderBrush="#FFFDE707" Opacity="0"/>
+        <Button x:Name="C7" Width="56" Height="350" Canvas.Top="5" Canvas.Left="367" ClickMode="Press" Click="C7_Click" Background="{x:Null}" Foreground="#FFFDE707" BorderBrush="#FFFDE707" Opacity="0"/>
+
+    </Canvas>
+
+
+</Window>
