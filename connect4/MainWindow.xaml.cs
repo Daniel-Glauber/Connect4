@@ -16,7 +16,7 @@ using System.Reflection;
 using Microsoft.Win32;
 using System.Diagnostics;
 
-namespace connet
+namespace connect4
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
