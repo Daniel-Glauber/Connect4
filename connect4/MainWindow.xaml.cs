@@ -27,7 +27,7 @@ namespace connect4
         public MainWindow()
         {
             InitializeComponent();
-            CreateDynamicStackPanel(7, 10);
+            CreateDynamicStackPanel(10, 10);
         }
 
         private void CreateDynamicStackPanel(int rowSize, int colSize)
