@@ -14,7 +14,7 @@
             <Grid>
                 <ComboBox Name="player_move" Text="Test" Height="23" Loaded="player_move_Loaded" SelectionChanged="player_move_SelectionChanged" VerticalAlignment="Top" />
                 <TextBlock IsHitTestVisible="False" Margin="10,5,0,0" Name="txtSelectP1" Foreground="Gray" Text="Select Color to Start"></TextBlock>
-             </Grid>
+            </Grid>
             <Grid>
                 <ComboBox Name="comboBox" Text="Test" Height="23" Loaded="ComboBox_Loaded"  SelectionChanged="comboBox_SelectionChanged"   VerticalAlignment="Top"/>
                 <TextBlock IsHitTestVisible="False" Margin="10,5,0,0" Name="txtSelectTeam" Foreground="Gray" Text="Select Red Player"></TextBlock>
@@ -31,22 +31,21 @@
                 <ComboBox Visibility="Hidden" Name="comboBox_sim" Text="Test" Height="23" Loaded="comboBox_sim_Loaded"  SelectionChanged="comboBox_sim_SelectionChanged"   VerticalAlignment="Top" />
                 <TextBlock Visibility="Hidden" IsHitTestVisible="False" Margin="10,5,0,0" Name="txtSelectSim" Foreground="Gray" Text="Select # of Simulations"></TextBlock>
             </Grid>
+            <Grid>
+                <TextBlock Visibility="Hidden" x:Name="textBlock_loss" TextWrapping="Wrap" Text="TextBlock"/>
+            </Grid>
         </StackPanel>
         <Grid x:Name="Canvas" HorizontalAlignment="Right" VerticalAlignment="Center">
-           
+
             <StackPanel Orientation="Vertical">
 
 
-                <StackPanel x:Name="top" Orientation="Vertical">
-
-
-                </StackPanel>
+                <StackPanel x:Name="top" Orientation="Vertical"/>
                 <Canvas x:Name="Board"/>
-                <StackPanel x:Name="SideR" Orientation="Horizontal">
-                </StackPanel>
-                
+                <StackPanel x:Name="SideR" Orientation="Horizontal"/>
+
             </StackPanel>
-            
+
         </Grid>
     </StackPanel>
 </Window>

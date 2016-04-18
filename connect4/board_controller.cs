@@ -9,9 +9,22 @@ namespace connect4
 {
     class board_controller
     {
+        class Point
+        {
+            public readonly int X;
+            public readonly int Y;
+            public Point(int x, int y)
+            {
+                X = x;
+                Y = y;
+            }
+        }
         private int numberOFrows, numberOFcolumns;
         private int[,] board;
-       public enum Player
+        private List<Point> redPucks;
+        private List<Point> blackPucks;
+
+        public enum Player
         {
             Red = 1, Black,
         }
@@ -19,6 +32,11 @@ namespace connect4
        
         public board_controller(int row, int col, string turn)
         {
+             
+
+            redPucks = new List<Point>();
+            blackPucks = new List<Point>();
+
             next_playersTurn =  (Player)Enum.Parse(typeof (Player), turn);
             board = new int[col, row];
             numberOFcolumns = col;
@@ -44,13 +62,14 @@ namespace connect4
         public int[] makeMove(int column)
         {
             int[] move = new int[5];
-            if (Can_place_puck(column))
-            {
+            
                 move[0] = numberOFcolumns;
                 move[1] = numberOFrows;
                 move[2] = column;
                 move[3] = -1;
                 move[4] = (int)next_playersTurn;
+            if (Can_place_puck(column))
+            {
                 for (int i = 0; i < numberOFrows; i++)
                 {
                     if (board[column, i] == 0)
@@ -63,11 +82,149 @@ namespace connect4
             }
             if (move[3] != -1)
             {
+                Point puck = new Point(column, move[3]);
+                int index = (int)next_playersTurn-1;
+                Console.Write(index);
+                if (index == 0)
+                {
+                    redPucks.Add(puck);
+                }
+                else
+                {
+                    blackPucks.Add(puck);
+                }
                 board[column, move[3]] = (int)next_playersTurn;
+                if (index == 0)
+                {
+                    if (-1 != checkforwin(redPucks, next_playersTurn))
+                    {
+                        move[1] = -2;
+                    }
+                }
+                else
+                {
+                    if (-1 != checkforwin(blackPucks, next_playersTurn))
+                    {
+                        move[1] = -2;
+                    }
+                }
+               
                 int m = (int)next_playersTurn % 2 + 1;
                 next_playersTurn = (Player)m;
             }
             return move;
+        }
+        private int checkforwin(List<Point> list, Player color)
+        {
+
+            foreach (var item in list)
+            {
+                int row = item.Y;
+                int col = item.X;
+                Boolean[] skips = new Boolean[8];
+                for (int i = 0; i < 8; i++)
+                {
+                    skips[i] = true;
+                }
+                for (int i = 0; i < 4; i++)
+                {
+                    int colPlus = col + i;
+                    int rowPlus = row + i;
+                    int colMinus = col - i;
+                    int rowMinus = row - i;
+
+                    if (colPlus < numberOFcolumns)
+                    {
+                        if (rowPlus < numberOFrows)
+                        {
+                            if (skips[0] && board[colPlus, rowPlus] == (int)color)
+                            {
+                                if (i == 3)
+                                    return list.IndexOf(item);
+                            }
+                            else
+                                skips[0] = false;
+                        }
+                        if (rowMinus > 0)
+                        {
+                            if (skips[1] && board[colPlus, rowMinus] == (int)color)
+                            {
+                                if (i == 3)
+                                    return list.IndexOf(item);
+
+                            }
+                            else
+                                skips[1] = false;
+                        }
+                        if (skips[2] && board[colPlus, row] == (int)color)
+                        {
+                            if (i == 3)
+                                return list.IndexOf(item);
+
+                        }
+                        else
+                            skips[2] = false;
+                    }
+                    if (colMinus > 0)
+                    {
+                        if (rowMinus > 0)
+                        {
+                            if (skips[3] && board[colMinus, rowMinus] == (int)color)
+                            {
+                                if (i == 3)
+                                    return list.IndexOf(item);
+                            }
+                            else
+                                skips[3] = false;
+                        }
+
+                        if (skips[4] && board[colMinus, row] == (int)color)
+                        {
+                            if (i == 3)
+                                return list.IndexOf(item);
+                        }
+                        else
+                            skips[4] = false;
+                    }
+                    if (rowMinus > 0)
+                    {
+                        if (skips[5] && board[col, rowMinus] == (int)color)
+                        {
+                            if (i == 3)
+                                return list.IndexOf(item);
+
+                        }
+                        else
+                            skips[5] = false;
+                    }
+                    if (rowPlus < numberOFrows)
+                    {
+                        if (colMinus > 0)
+                        {
+                            if (skips[6] && board[colMinus, rowPlus] == (int)color)
+                            {
+                                if (i == 3)
+                                    return list.IndexOf(item);
+
+                            }
+                            else
+                                skips[6] = false;
+                        }
+
+                            if (skips[7] && board[col, rowPlus] == (int)color)
+                            {
+                            if (i == 3)
+                                return list.IndexOf(item);
+
+                        }
+                        else
+                            skips[7] = false;
+                    }
+
+
+                }
+            }
+            return -1;
         }
         public int[,] getBoard
         {

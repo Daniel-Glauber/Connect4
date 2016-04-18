@@ -167,7 +167,7 @@ namespace connect4
                 btnn.Name = "Btn" + "kk";
                 btnn.Height = 20;
                 btnn.Content = "Submit Change";
-                btnn.Foreground = new SolidColorBrush(Colors.White);
+                btnn.Foreground = new SolidColorBrush(Colors.Black);
                 btnn.Margin = new Thickness(5, 5, 0, 2.5);
                 btnn.Click += changeBoardSize; 
                 kk.Children.Add(btnn);
@@ -219,8 +219,39 @@ namespace connect4
             int[] board_return = new int[5];
             //  
             board_return = board.makeMove(columnInt);
-            if (board_return[3] != -1)
+
+            if (board_return[3] == -1)
             {
+                if (board_return[4] == 1)
+                {
+                    textBlock_loss.Text = "Red Made Bad Move";
+                    textBlock_loss.Visibility = Visibility.Visible;
+
+                }
+                else if (board_return[4] == 2)
+                {
+                    textBlock_loss.Text = "Black Made Bad Move";
+                    textBlock_loss.Visibility = Visibility.Visible;
+                }
+            }
+            if (board_return[1] == -2)
+            {
+                if (board_return[4] == 1)
+                {
+                    ar[board_return[2], board_return[3]].Fill = new SolidColorBrush(Colors.Red);
+
+                    textBlock_loss.Text = "Red Won";
+                    textBlock_loss.Visibility = Visibility.Visible;
+
+                }
+                else if (board_return[4] == 2)
+                {
+                    ar[board_return[2], board_return[3]].Fill = new SolidColorBrush(Colors.Black);
+                    textBlock_loss.Text = "Black Won";
+                    textBlock_loss.Visibility = Visibility.Visible;
+                }
+            }
+            else { 
                 if (board_return[4] == 1)
                 {
                     ar[board_return[2], board_return[3]].Fill = new SolidColorBrush(Colors.Red);
@@ -231,6 +262,8 @@ namespace connect4
                     ar[board_return[2], board_return[3]].Fill = new SolidColorBrush(Colors.Black);
                 }
             }
+           
+
             // ar[0, 1].Fill =// myBrush;
             //
         }
