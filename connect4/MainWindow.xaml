@@ -6,21 +6,47 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:connect4"
         mc:Ignorable="d"
-        Title="MainWindow"  Height="Auto" Width="Auto">
+        Title="Connect4 Interface"  Height="Auto" Width="Auto">
     <StackPanel x:Name="Window" Orientation="Horizontal">
         <StackPanel x:Name="SideL" Orientation="Vertical" Width="150">
             <Button x:Name="button" Content="Button" Click="button_Click"/>
-            <Button x:Name="filePath" Content="Computer" Click="filePath_Click"/>
+            <Button x:Name="filePath" Content="Computer" Click="filePath_Click" OpacityMask="Black"/>
+            <Grid>
+                <ComboBox Name="player_move" Text="Test" Height="23" Loaded="player_move_Loaded" SelectionChanged="player_move_SelectionChanged" VerticalAlignment="Top" />
+                <TextBlock IsHitTestVisible="False" Margin="10,5,0,0" Name="txtSelectP1" Foreground="Gray" Text="Select Color to Start"></TextBlock>
+             </Grid>
+            <Grid>
+                <ComboBox Name="comboBox" Text="Test" Height="23" Loaded="ComboBox_Loaded"  SelectionChanged="comboBox_SelectionChanged"   VerticalAlignment="Top"/>
+                <TextBlock IsHitTestVisible="False" Margin="10,5,0,0" Name="txtSelectTeam" Foreground="Gray" Text="Select Red Player"></TextBlock>
+            </Grid>
+            <Grid>
+                <ComboBox Name="comboBox_color" Text="Test" Height="23" Loaded="comboBox_color_Loaded"  SelectionChanged="comboBox_color_SelectionChanged"   VerticalAlignment="Top" />
+                <TextBlock IsHitTestVisible="False" Margin="10,5,0,0" Name="txtSelectColor" Foreground="Gray" Text="Select Black Player"></TextBlock>
+            </Grid>
+            <Grid>
+                <ComboBox Visibility="Hidden" Name="comboBox_time" Text="Test" Height="23" Loaded="comboBox_time_Loaded"  SelectionChanged="comboBox_time_SelectionChanged"   VerticalAlignment="Top" />
+                <TextBlock Visibility="Hidden" IsHitTestVisible="False" Margin="10,5,0,0" Name="txtSelectTime" Foreground="Gray" Text="Select Time for Move"></TextBlock>
+            </Grid>
+            <Grid>
+                <ComboBox Visibility="Hidden" Name="comboBox_sim" Text="Test" Height="23" Loaded="comboBox_sim_Loaded"  SelectionChanged="comboBox_sim_SelectionChanged"   VerticalAlignment="Top" />
+                <TextBlock Visibility="Hidden" IsHitTestVisible="False" Margin="10,5,0,0" Name="txtSelectSim" Foreground="Gray" Text="Select # of Simulations"></TextBlock>
+            </Grid>
         </StackPanel>
         <Grid x:Name="Canvas" HorizontalAlignment="Right" VerticalAlignment="Center">
-            <Canvas x:Name="Board"/>
-            <StackPanel x:Name="SideR" Orientation="Horizontal">
-                <StackPanel.Resources>
-                    <Style TargetType="{x:Type Ellipse}">
-                        <Setter Property="Margin" Value="10,10,0,0"/>
-                    </Style>
-                </StackPanel.Resources>
+           
+            <StackPanel Orientation="Vertical">
+
+
+                <StackPanel x:Name="top" Orientation="Vertical">
+
+
+                </StackPanel>
+                <Canvas x:Name="Board"/>
+                <StackPanel x:Name="SideR" Orientation="Horizontal">
+                </StackPanel>
+                
             </StackPanel>
+            
         </Grid>
     </StackPanel>
 </Window>

@@ -37,6 +37,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -63,6 +64,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="animation.cs" />
+    <Compile Include="board_controller.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -94,6 +97,147 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\black_full.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\black_001.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\black_002.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\black_004.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\black_005.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\black_007.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\black_009.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\black_011.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\black_013.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\black_015.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\black_019.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\black_021.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\black_023.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\black_027.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\black_030.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\black_032.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\black_034.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\black_037.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\black_040.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\black_042.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\black_045.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\black_047.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\black_049.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\black_100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\black_101.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\black_103.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\black_105.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\black_108.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\black_110.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\black_112.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\black_114.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\black_116.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\black_119.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\black_121.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\black_123.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\black_125.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\black_128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\black_131.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\black_133.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\black_135.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\black_138.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\black_140.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\black_142.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\black_144.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\black_146.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\black_148.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\black_150.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
