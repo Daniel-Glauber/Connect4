@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -21,6 +23,7 @@ namespace connect4
         }
         private int numberOFrows, numberOFcolumns;
         private int[,] board;
+        private string[] players = new string [8];
         private List<Point> redPucks;
         private List<Point> blackPucks;
 
@@ -28,16 +31,31 @@ namespace connect4
         {
             Red = 1, Black,
         }
-        private Player next_playersTurn;
-       
-        public board_controller(int row, int col, string turn)
-        {
-             
+        public Player next_playersTurn;
 
+        public int get_move()
+        {
+            var reader = new StreamReader(File.OpenRead("move.txt"));       
+            char n = (char)reader.Read();
+            reader.Close();
+            return n-'0';
+        }
+        
+        public board_controller(int row, int col, string[] play)
+        {
+            for (int i = 0; i < 8; i++)
+            {
+                players[i] = play[i];
+            }
             redPucks = new List<Point>();
             blackPucks = new List<Point>();
 
-            next_playersTurn =  (Player)Enum.Parse(typeof (Player), turn);
+            next_playersTurn =  (Player)Enum.Parse(typeof (Player), players[0]);
+            using (StreamWriter file = new StreamWriter("size.txt"))
+            {
+                file.Write(col.ToString() + " " + row.ToString() + " " + next_playersTurn.ToString());
+                file.Close();
+            }
             board = new int[col, row];
             numberOFcolumns = col;
             numberOFrows = row;
@@ -48,7 +66,24 @@ namespace connect4
                     board[i, j] = 0;
                 }
             }
+            using (StreamWriter file = new StreamWriter("board.txt"))
+            {
+                for (int j = 0; j < numberOFrows; j++)
+                {
+                    for (int i = 0; i < numberOFcolumns; i++)
+                    {
+
+
+
+                        file.Write((board[i, j]));
+                    }
+                    file.WriteLine("\n");
+                }
+                file.Close();
+            }
         }
+
+       
 
         public Boolean Can_place_puck(int column)
         {
@@ -84,7 +119,6 @@ namespace connect4
             {
                 Point puck = new Point(column, move[3]);
                 int index = (int)next_playersTurn-1;
-                Console.Write(index);
                 if (index == 0)
                 {
                     redPucks.Add(puck);
@@ -94,6 +128,21 @@ namespace connect4
                     blackPucks.Add(puck);
                 }
                 board[column, move[3]] = (int)next_playersTurn;
+                using (StreamWriter file = new StreamWriter("board.txt"))
+                {
+                    for (int j = 0; j < numberOFrows; j++)
+                    {
+                        for (int i = 0; i < numberOFcolumns; i++)
+                        {
+
+
+
+                            file.Write((board[i, j]));
+                        }
+                        file.WriteLine("\n");
+                    }
+                    file.Close();
+                }
                 if (index == 0)
                 {
                     if (-1 != checkforwin(redPucks, next_playersTurn))
@@ -105,7 +154,7 @@ namespace connect4
                 {
                     if (-1 != checkforwin(blackPucks, next_playersTurn))
                     {
-                        move[1] = -2;
+                            move[1] = -2;
                     }
                 }
                
@@ -225,6 +274,15 @@ namespace connect4
                 }
             }
             return -1;
+        }
+        public bool can_continue(int[] board)
+        {
+            if (board[3] == -1 || board[1] == -2)
+            {
+                return false;
+            }
+            else
+                return true;
         }
         public int[,] getBoard
         {

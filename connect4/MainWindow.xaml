@@ -9,30 +9,40 @@
         Title="Connect4 Interface"  Height="Auto" Width="Auto">
     <StackPanel x:Name="Window" Orientation="Horizontal">
         <StackPanel x:Name="SideL" Orientation="Vertical" Width="150">
-            <Button x:Name="button" Content="Button" Click="button_Click"/>
-            <Button x:Name="filePath" Content="Computer" Click="filePath_Click" OpacityMask="Black"/>
+            <Label Name="colorLabel" Visibility="Collapsed" Content="Select Color to Start"/>
             <Grid>
                 <ComboBox Name="player_move" Text="Test" Height="23" Loaded="player_move_Loaded" SelectionChanged="player_move_SelectionChanged" VerticalAlignment="Top" />
                 <TextBlock IsHitTestVisible="False" Margin="10,5,0,0" Name="txtSelectP1" Foreground="Gray" Text="Select Color to Start"></TextBlock>
             </Grid>
+            <Label Name="redLabel" Visibility="Collapsed" Content="Select Red Player"/>
             <Grid>
-                <ComboBox Name="comboBox" Text="Test" Height="23" Loaded="ComboBox_Loaded"  SelectionChanged="comboBox_SelectionChanged"   VerticalAlignment="Top"/>
-                <TextBlock IsHitTestVisible="False" Margin="10,5,0,0" Name="txtSelectTeam" Foreground="Gray" Text="Select Red Player"></TextBlock>
+                <ComboBox Name="red_comboBox" Text="Test" Height="23" Loaded="red_comboBox_Loaded"  SelectionChanged="red_comboBox_SelectionChanged"   VerticalAlignment="Top"/>
+                <TextBlock IsHitTestVisible="False" Margin="10,5,0,0" Name="txtRedPlayer" Foreground="Gray" Text="Select Red Player"></TextBlock>
             </Grid>
+            <Label Name="redTimeLabel" Visibility="Collapsed" Content="Select Red's Time Limit"/>
             <Grid>
-                <ComboBox Name="comboBox_color" Text="Test" Height="23" Loaded="comboBox_color_Loaded"  SelectionChanged="comboBox_color_SelectionChanged"   VerticalAlignment="Top" />
-                <TextBlock IsHitTestVisible="False" Margin="10,5,0,0" Name="txtSelectColor" Foreground="Gray" Text="Select Black Player"></TextBlock>
+                <ComboBox Visibility="Collapsed" Name="comboBox_red_time" Text="Test" Height="23" Loaded="comboBox_time_Loaded"  SelectionChanged="comboBox_time_SelectionChanged"   VerticalAlignment="Top" />
+                <TextBlock Visibility="Collapsed" IsHitTestVisible="False" Margin="5,5,0,0" Name="txtRedTime" Foreground="Gray" Text="Select Red's Time Limit"></TextBlock>
             </Grid>
+            <CheckBox Margin="5,0,0,5" Visibility="Collapsed" Name="RedCheckBox" Content="Show Red's Console" Checked="RedCheckBox_Checked" Unchecked="RedCheckBox_Unchecked" />
+            <Label Name="blackLabel" Visibility="Collapsed" Content="Select Black Player"/>
             <Grid>
-                <ComboBox Visibility="Hidden" Name="comboBox_time" Text="Test" Height="23" Loaded="comboBox_time_Loaded"  SelectionChanged="comboBox_time_SelectionChanged"   VerticalAlignment="Top" />
-                <TextBlock Visibility="Hidden" IsHitTestVisible="False" Margin="10,5,0,0" Name="txtSelectTime" Foreground="Gray" Text="Select Time for Move"></TextBlock>
+                <ComboBox Name="black_comboBox" Text="Test" Height="23" Loaded="black_comboBox_Loaded"  SelectionChanged="black_comboBox_SelectionChanged"   VerticalAlignment="Top" />
+                <TextBlock IsHitTestVisible="False" Margin="10,5,0,0" Name="txtBlackPlayer" Foreground="Gray" Text="Select Black Player"></TextBlock>
             </Grid>
+            <Label Name="blackTimeLabel" Visibility="Collapsed" Content="Select Black's Time Limit"/>
+            <Grid>
+                <ComboBox Visibility="Hidden" Name="comboBox_black_time" Text="Test" Height="23" Loaded="comboBox_time_Loaded"  SelectionChanged="comboBox_time_SelectionChanged"   VerticalAlignment="Top" />
+                <TextBlock Visibility="Hidden" IsHitTestVisible="False" Margin="5,5,0,0" Name="txtBlackTime" Foreground="Gray" Text="Select Black's Time Limit"></TextBlock>
+            </Grid>
+            <CheckBox Margin="5,0,0,5"  Visibility="Collapsed" Name="BlackCheckBox" Content="Show Black's Console" Checked="BlackCheckBox_Checked" Unchecked="BlackCheckBox_Unchecked" />
+            <Label Name="simLabel" Visibility="Collapsed" Content="Select # of Simulations"/>
             <Grid>
                 <ComboBox Visibility="Hidden" Name="comboBox_sim" Text="Test" Height="23" Loaded="comboBox_sim_Loaded"  SelectionChanged="comboBox_sim_SelectionChanged"   VerticalAlignment="Top" />
                 <TextBlock Visibility="Hidden" IsHitTestVisible="False" Margin="10,5,0,0" Name="txtSelectSim" Foreground="Gray" Text="Select # of Simulations"></TextBlock>
             </Grid>
             <Grid>
-                <TextBlock Visibility="Hidden" x:Name="textBlock_loss" TextWrapping="Wrap" Text="TextBlock"/>
+                <TextBlock Visibility="Collapsed" x:Name="textBlock_loss" TextWrapping="Wrap" Text="TextBlock"/>
             </Grid>
         </StackPanel>
         <Grid x:Name="Canvas" HorizontalAlignment="Right" VerticalAlignment="Center">
